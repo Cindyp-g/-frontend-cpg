@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from "./componentes/navbar/navbar.component";
 import { ModprimengModule } from './modprimeng.module';
 import { MessageService } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
@@ -9,7 +8,7 @@ import { ToolbarComponent } from "./componentes/toolbar/toolbar.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, ModprimengModule, AvatarModule, ToolbarComponent],
+  imports: [RouterOutlet, ModprimengModule, AvatarModule, ToolbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [MessageService]

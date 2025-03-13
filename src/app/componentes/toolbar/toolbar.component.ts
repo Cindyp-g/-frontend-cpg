@@ -9,25 +9,41 @@ import { InputIcon } from 'primeng/inputicon';
 
 @Component({
   selector: 'app-toolbar',
-  imports: [Toolbar, ButtonModule, SplitButton, InputTextModule, IconField, InputIcon],
+  imports: [ButtonModule, SplitButton, InputTextModule, IconField, InputIcon],
   standalone: true,
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css'
 })
 export class ToolbarComponent implements OnInit{
 
-  items: MenuItem[] | undefined;
+    categorias: MenuItem[] = [];
+    perfilItems: MenuItem[] = [];
+
 
     ngOnInit() {
-        this.items = [
+        this.categorias = [
+            { label: 'Vestidos', icon: 'pi pi-tablet', command: () => this.filtrarCategoria('Vestidos') },
+            { label: 'Camisas', icon: 'pi pi-tshirt', command: () => this.filtrarCategoria('Camisas') },
+            { label: 'Shorts', icon: 'pi pi-home', command: () => this.filtrarCategoria('shorts') }
+          ];
+      
+          this.perfilItems = [
             {
-                label: 'Update',
-                icon: 'pi pi-refresh'
+                label: 'Ingresar',
+                icon: 'pi pi-user',
+                routerLink:'/login'
             },
             {
-                label: 'Delete',
-                icon: 'pi pi-times'
+                label: 'Registrar',
+                icon: 'pi pi-pencil',
+                routerLink:'/registro'
             }
-        ];
-    }
+          ];
+        }
+      
+        filtrarCategoria(categoria: string) {
+          console.log('Filtrar por:', categoria);
+        }
+
+
 }

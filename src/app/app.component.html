@@ -1,47 +1,12 @@
-<app-toolbar></app-toolbar>
-
-<app-navbar></app-navbar>
-
-<h1>Toast 1</h1>
-<div class="card flex justify-center gap-2">
-    <p-toast />
-    <p-button type="button" pRipple (click)="show()" label="El toast de Cindy " />
-</div>
-<h1>Toast 2</h1>
-    <div class="card flex justify-center">
-        <p-toast position="bottom-center" key="confirm" (onClose)="onReject()" [baseZIndex]="5000">
-            <ng-template let-message #message>
-                <div class="flex flex-col items-start flex-auto">
-                    <div class="flex items-center gap-2">
-                        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
-                        <span class="font-bold">Amy Elsner</span>
-                    </div>
-                    <div class="font-medium text-lg my-4">{{ message.summary }}</div>
-                    <p-button severity="success" size="small" label="Reply" (click)="onConfirm()" />
-                </div>
-            </ng-template>
-        </p-toast>
-        <p-button (click)="showConfirm()" label="View" />
+<div class="main">
+    <div class="header">
+        <app-toolbar></app-toolbar>
     </div>
-
-<h1>Toast 3</h1>
-<div class="card flex justify-center gap-2">
-    <p-button pRipple (click)="clear()" label="Clear" severity="info" />
-</div>
-
-<h1>Toast 4</h1>
-<div class="card flex justify-center">
-    <p-toast position="top-left" key="tl" />
-    <p-toast position="bottom-left" key="bl" />
-    <p-toast position="bottom-right" key="br" />
-    <div class="flex flex-wrap gap-2">
-        <p-button pRipple (click)="showTopLeft()" label="Top Left" />
-        <p-button pRipple (click)="showBottomRight()" label="Bottom Right" />
+    <div class="flex justify-content-center align-items-center h-full">
+        <router-outlet></router-outlet>
+        <p-toast></p-toast>
     </div>
+    <div class="footer">
+    </div>
+</div>
     
-</div>
-
-
-
-
-<router-outlet />

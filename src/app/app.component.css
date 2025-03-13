@@ -1,0 +1,23 @@
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 99%; 
+    width: 99%; 
+}
+
+
+.header {
+    padding-bottom: 5px; 
+    width: 100%; 
+
+}
+
+
+.flex {
+    flex-grow: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

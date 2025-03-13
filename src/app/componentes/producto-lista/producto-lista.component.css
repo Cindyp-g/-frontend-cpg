@@ -1,0 +1,94 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body, html {
+    height: 100%;
+    width: 100%; 
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal para todo */
+.flex {
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: stretch; 
+    height: 100%;
+}
+
+/* Sección de bienvenida */
+.inicio {
+    text-align: center;
+    padding: 40px;
+    background-color: #003c34; /* Azul oscuro */
+    color: white;
+    width: 100%; 
+    flex-shrink: 0; 
+}
+
+/* Sección de productos */
+.productos {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    flex-grow: 1; 
+}
+
+.productos1, .productos2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.producto {
+    width: 30%; 
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.producto h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #003c34;
+}
+
+.precio {
+    font-size: 1.2rem;
+    color: #28a745; 
+    margin-bottom: 15px;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #003c34; 
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}

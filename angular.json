@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shoponline_cpg": {
+    "eunbyeol-cpg-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/shoponline_cpg",
+            "outputPath": "dist/eunbyeol-cpg-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "shoponline_cpg:build:production"
+              "buildTarget": "eunbyeol-cpg-app:build:production"
             },
             "development": {
-              "buildTarget": "shoponline_cpg:build:development"
+              "buildTarget": "eunbyeol-cpg-app:build:development"
             }
           },
           "defaultConfiguration": "development"
