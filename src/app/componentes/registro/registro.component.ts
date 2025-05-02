@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ModprimengModule } from '../../modprimeng.module';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { passwordMatchValidator } from '../../shared/password-match.directives';
+import { passwordMatchValidator } from '../../shared/pasword-match.directives';
 import { AuthService } from '../../servicios/auth.service';
 import { User } from '../../interfaces/user';
 import { MessageService } from 'primeng/api';
@@ -19,7 +19,7 @@ import { MessageService } from 'primeng/api';
 export class RegistroComponent {
   registerForma: FormGroup;
 
-  constructor(private fb: FormBuilder, private auhtService: AuthService, private messageService: MessageService, private router:Router) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private messageService: MessageService, private router:Router) {
     this.registerForma = this.fb.group(
       {
         name: ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z ]+$/)]],
@@ -54,9 +54,19 @@ export class RegistroComponent {
 
   enviarRegistro() {
     const data = {...this.registerForma.value};
-
+     
     delete data.confirmPassword;
-
+     console.log (data)
+    
+    this.authService.registroUsuario(data as User).subscribe(
+      Response => {console.log (Response)
+        this.messageService.add({severity: 'success', summary: 'success',
+          detail: 'Registro Agregado con éxito'
+        })
+        this.router.navigate(['/'])
+      },
+      error => console.log(error)
+    )
 
   }
 }

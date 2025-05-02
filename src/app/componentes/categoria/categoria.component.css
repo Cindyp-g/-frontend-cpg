@@ -1,0 +1,145 @@
+/* ----------- RESET GENERAL ----------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e6f7f9;
+  color: #2a4d59;
+  line-height: 1.6;
+  padding: 0 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* HEADER */
+header {
+  background-color: #3ba99c;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #d7f5f0;
+  color: #2a4d59;
+}
+
+/* MAIN */
+main {
+  flex-grow: 1;
+}
+
+main h1 {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 2.5rem;
+  color: #2a4d59;
+  font-weight: 700;
+}
+
+/* ----------- GRID DE CATEGORÍAS ----------- */
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px 0;
+}
+
+/* ----------- TARJETA DE CATEGORÍA ----------- */
+.categoria-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.categoria-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.categoria-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.categoria-card h2 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  color: #2a4d59;
+  font-weight: 600;
+}
+
+/* ----------- BOTÓN VER CATEGORÍA ----------- */
+.categoria-card button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #33b8b8;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-top: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.categoria-card button:hover {
+  background-color: #2aa7a7;
+  transform: translateY(-2px);
+}
+
+/* FOOTER */
+footer {
+  background-color: #3ba99c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}

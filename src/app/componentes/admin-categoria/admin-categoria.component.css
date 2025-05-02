@@ -1,0 +1,651 @@
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.producto-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.btn-add-cart {
+  background-color: #28a745;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-add-cart:hover {
+  background-color: #218838;
+}
+
+/* ----------- RESET GENERAL ----------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6f7f9;
+  color: #2a4d59;
+  line-height: 1.6;
+  padding: 0 20px;
+
+  min-height: 100vh; /* Ocupa toda la altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* HEADER */
+header {
+  background-color: #3ba99c;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* NAV */
+nav a {
+  color: #ffffff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #d7f5f0;
+}
+
+/* MAIN ocupa espacio restante */
+main {
+  flex-grow: 1;
+}
+
+/* FOOTER pegado abajo */
+footer {
+  background-color: #3ba99c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+
+/* ---------- BOTÓN "Agregar Producto" ---------- */
+button[pButton] {
+background-color: #3ba99c;
+color: white;
+border: none;
+padding: 12px 24px;
+margin-bottom: 20px;
+border-radius: 10px;
+cursor: pointer;
+font-weight: bold;
+font-size: 1rem;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: background-color 0.3s, transform 0.2s ease;
+}
+
+button[pButton]:hover {
+background-color: #2c8378;
+transform: translateY(-2px);
+}
+
+/* ---------- TABLA de productos ---------- */
+table {
+width: 100%;
+border-collapse: separate;
+border-spacing: 0;
+margin-top: 20px;
+background-color: #ffffff;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+thead {
+background-color: #3ba99c;
+color: white;
+}
+
+thead th {
+padding: 14px;
+text-align: center;
+font-size: 1rem;
+font-weight: 600;
+letter-spacing: 0.5px;
+}
+
+tbody tr:nth-child(even) {
+background-color: #e6f7f9;
+}
+
+tbody td {
+padding: 14px;
+text-align: center;
+font-size: 0.95rem;
+border-bottom: 1px solid #d0eae8;
+}
+
+tbody td img {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border-radius: 8px;
+}
+
+/* ---------- FORMULARIO DE PRODUCTO ---------- */
+.formulario-producto {
+background-color: #f0fcfc;
+border: 2px solid #3ba99c;
+border-radius: 14px;
+padding: 24px;
+margin-bottom: 30px;
+box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.05);
+max-width: 600px;
+transition: box-shadow 0.3s ease;
+}
+
+.formulario-producto h3 {
+color: #2a4d59;
+margin-bottom: 20px;
+font-size: 1.6rem;
+}
+
+.formulario-producto label {
+display: block;
+margin-top: 16px;
+font-weight: bold;
+color: #2a4d59;
+}
+
+.formulario-producto input[type="text"],
+.formulario-producto input[type="number"] {
+width: 100%;
+padding: 10px 14px;
+margin-top: 6px;
+border: 1px solid #b8e1df;
+border-radius: 10px;
+font-size: 1rem;
+background-color: #ffffff;
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-producto input:focus {
+border-color: #3ba99c;
+box-shadow: 0 0 0 3px rgba(59, 169, 156, 0.2);
+outline: none;
+}
+
+.formulario-producto button[pButton] {
+margin-top: 24px;
+background-color: #3ba99c;
+color: white;
+border: none;
+padding: 12px 24px;
+border-radius: 10px;
+cursor: pointer;
+font-weight: bold;
+font-size: 1rem;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.formulario-producto button[pButton]:hover {
+background-color: #2c8378;
+transform: translateY(-2px);
+}
+
+/* ---------- ESTILOS PERSONALIZADOS PARA p-dialog ---------- */
+:host ::ng-deep .p-dialog {
+border-radius: 14px !important;
+overflow: hidden;
+box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+background-color: #3ba99c;
+color: white;
+font-size: 1.2rem;
+font-weight: bold;
+padding: 16px;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-content {
+background-color: #f0fcfc;
+padding: 24px;
+}
+
+/* Campos del formulario */
+.field {
+margin-bottom: 20px;
+}
+
+.field label {
+display: block;
+margin-bottom: 6px;
+font-weight: bold;
+color: #2a4d59;
+}
+
+.field input[type="text"],
+.field input[type="number"] {
+width: 100%;
+padding: 10px 14px;
+border: 1px solid #b8e1df;
+border-radius: 10px;
+font-size: 1rem;
+background-color: #ffffff;
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.field input:focus {
+border-color: #3ba99c;
+box-shadow: 0 0 0 3px rgba(59, 169, 156, 0.2);
+outline: none;
+}
+
+/* Botones del diálogo */
+.mt-2 {
+margin-top: 20px;
+display: flex;
+gap: 12px;
+justify-content: flex-end;
+}
+
+:host ::ng-deep .p-button {
+background-color: #3ba99c;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 10px;
+font-weight: bold;
+font-size: 1rem;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+:host ::ng-deep .p-button:hover {
+background-color: #2c8378;
+transform: translateY(-2px);
+}
+
+:host ::ng-deep .p-button.p-button-secondary {
+background-color: #cccccc;
+color: #2a4d59;
+}
+
+:host ::ng-deep .p-button.p-button-secondary:hover {
+background-color: #bbbbbb;
+}
+
+.boton-agregar-producto {
+display: flex;
+justify-content: flex-end;
+margin-top: 30px;
+margin-bottom: 10px;
+}
+td button {
+margin-right: 8px;
+}
+
+table {
+  width: 60%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.producto-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.btn-add-cart {
+  background-color: #28a745;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-add-cart:hover {
+  background-color: #218838;
+}
+
+/* ----------- RESET GENERAL ----------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6f7f9;
+  color: #2a4d59;
+  line-height: 1.6;
+  padding: 0 20px;
+
+  min-height: 100vh; /* Ocupa toda la altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* HEADER */
+header {
+  background-color: #3ba99c;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* NAV */
+nav a {
+  color: #ffffff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #d7f5f0;
+}
+
+/* MAIN ocupa espacio restante */
+main {
+  flex-grow: 1;
+}
+
+/* FOOTER pegado abajo */
+footer {
+  background-color: #3ba99c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+
+/* ---------- BOTÓN "Agregar Producto" ---------- */
+.boton-agregar-categoria {
+display: flex;
+justify-content: flex-end; /* Alinea el botón a la derecha */
+margin-top: 20px; /* Separa el botón de la tabla hacia abajo */
+}
+
+button[pButton] {
+background-color: #3ba99c;
+color: white;
+border: none;
+padding: 12px 24px;
+margin-left: 20px; /* Separa el botón de la tabla por la izquierda */
+border-radius: 10px;
+cursor: pointer;
+font-weight: bold;
+font-size: 1rem;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: background-color 0.3s, transform 0.2s ease;
+}
+
+button[pButton]:hover {
+background-color: #2c8378;
+transform: translateY(-2px);
+}
+
+
+/* ---------- TABLA de productos ---------- */
+table {
+width: 100%;
+border-collapse: separate;
+border-spacing: 0;
+margin-top: 20px;
+background-color: #ffffff;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+thead {
+background-color: #3ba99c;
+color: white;
+}
+
+thead th {
+padding: 14px;
+text-align: center;
+font-size: 1rem;
+font-weight: 600;
+letter-spacing: 0.5px;
+}
+
+tbody tr:nth-child(even) {
+background-color: #e6f7f9;
+}
+
+tbody td {
+padding: 14px;
+text-align: center;
+font-size: 0.95rem;
+border-bottom: 1px solid #d0eae8;
+}
+
+tbody td img {
+width: 50px;
+height: 50px;
+object-fit: cover;
+border-radius: 8px;
+}
+
+/* ---------- FORMULARIO DE PRODUCTO ---------- */
+.formulario-producto {
+background-color: #f0fcfc;
+border: 2px solid #3ba99c;
+border-radius: 14px;
+padding: 24px;
+margin-bottom: 30px;
+box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.05);
+max-width: 600px;
+transition: box-shadow 0.3s ease;
+}
+
+.formulario-producto h3 {
+color: #2a4d59;
+margin-bottom: 20px;
+font-size: 1.6rem;
+}
+
+.formulario-producto label {
+display: block;
+margin-top: 16px;
+font-weight: bold;
+color: #2a4d59;
+}
+
+.formulario-producto input[type="text"],
+.formulario-producto input[type="number"] {
+width: 100%;
+padding: 10px 14px;
+margin-top: 6px;
+border: 1px solid #b8e1df;
+border-radius: 10px;
+font-size: 1rem;
+background-color: #ffffff;
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-producto input:focus {
+border-color: #3ba99c;
+box-shadow: 0 0 0 3px rgba(59, 169, 156, 0.2);
+outline: none;
+}
+
+.formulario-producto button[pButton] {
+margin-top: 24px;
+background-color: #3ba99c;
+color: white;
+border: none;
+padding: 12px 24px;
+border-radius: 10px;
+cursor: pointer;
+font-weight: bold;
+font-size: 1rem;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.formulario-producto button[pButton]:hover {
+background-color: #2c8378;
+transform: translateY(-2px);
+}
+
+/* ---------- ESTILOS PERSONALIZADOS PARA p-dialog ---------- */
+:host ::ng-deep .p-dialog {
+border-radius: 14px !important;
+overflow: hidden;
+box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+background-color: #3ba99c;
+color: white;
+font-size: 1.2rem;
+font-weight: bold;
+padding: 16px;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-content {
+background-color: #f0fcfc;
+padding: 24px;
+}
+
+/* Campos del formulario */
+.field {
+margin-bottom: 20px;
+}
+
+.field label {
+display: block;
+margin-bottom: 6px;
+font-weight: bold;
+color: #2a4d59;
+}
+
+.field input[type="text"],
+.field input[type="number"] {
+width: 100%;
+padding: 10px 14px;
+border: 1px solid #b8e1df;
+border-radius: 10px;
+font-size: 1rem;
+background-color: #ffffff;
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.field input:focus {
+border-color: #3ba99c;
+box-shadow: 0 0 0 3px rgba(59, 169, 156, 0.2);
+outline: none;
+}
+
+/* Botones del diálogo */
+.mt-2 {
+margin-top: 20px;
+display: flex;
+gap: 12px;
+justify-content: flex-end;
+}
+
+:host ::ng-deep .p-button {
+background-color: #3ba99c;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 10px;
+font-weight: bold;
+font-size: 1rem;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+:host ::ng-deep .p-button:hover {
+background-color: #2c8378;
+transform: translateY(-2px);
+}
+
+:host ::ng-deep .p-button.p-button-secondary {
+background-color: #cccccc;
+color: #2a4d59;
+}
+
+:host ::ng-deep .p-button.p-button-secondary:hover {
+background-color: #bbbbbb;
+}
+
+.boton-agregar-producto {
+display: flex;
+justify-content: flex-end;
+margin-top: 30px;
+margin-bottom: 10px;
+}
+td button {
+margin-right: 8px;
+background-color: #3ba99c;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 10px;
+font-weight: bold;
+font-size: 1rem;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+

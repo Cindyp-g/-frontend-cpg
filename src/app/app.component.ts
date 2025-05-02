@@ -3,12 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { ModprimengModule } from './modprimeng.module';
 import { MessageService } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
-import { ToolbarComponent } from "./componentes/toolbar/toolbar.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ModprimengModule, AvatarModule, ToolbarComponent],
+  imports: [RouterOutlet, ModprimengModule, AvatarModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [MessageService]

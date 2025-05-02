@@ -1,0 +1,74 @@
+<body>
+    <!-- Header -->
+    <header>
+     <div class="header-container">
+         <img src="./logoo.jpg" alt="Logo de la tienda" class="logo">
+         <h1>Eunbyeol</h1>
+     </div>
+     <nav>
+         <a href="http://localhost:4200/admin">Inicio</a>
+         <a href="adminUsuario">Usuarios</a>
+         <a href="adminProducto">Productos</a>
+         <a href="adminCategoria">Catefgorias</a>
+         <a href="adminCarrito">Carrito</a>
+         <a href="orden">Orden</a>
+         <a href="login">Login</a>
+     </nav>
+   </header>
+ 
+   <!-- Contenido Principal -->
+   <main class="admin-cart">
+    <h1 class="admin-cart-title">Panel de Administración - Carrito de Compras</h1>
+  
+    <div *ngIf="carrito.length === 0" class="empty-cart-message">
+      <p>El carrito está vacío.</p>
+      <a href="/producto" class="btn-primary">Ver Productos</a>
+    </div>
+  
+    <div *ngIf="carrito.length > 0" class="cart-table-container">
+      <table class="admin-cart-table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of carrito">
+            <td>{{ item.nombre }}</td> 
+            <td>${{ item.precio }}</td> 
+            <td>
+              <input [(ngModel)]="item.cantidad" (change)="actualizarCantidad(item)" type="number" min="1" class="quantity-input">
+            </td>
+            <td>${{ item.precio * item.cantidad }}</td> 
+            <td>
+              <button (click)="eliminarProducto(item.id_producto)" class="btn-delete">Eliminar</button>
+              <button (click)="verDetalles(item)" class="btn-details">Ver Detalles</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="total-label">Total General</td>
+            <td class="total-amount">${{ total }}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  
+    <div class="admin-actions">
+      <button class="btn-primary">Gestionar Inventario</button>
+      <button class="btn-primary">Ver Reportes</button>
+    </div>
+  </main>
+  
+  
+   <!-- Footer -->
+   <footer>
+     <p>&copy; 2024 Eunbyeol | Todos los derechos reservados.</p>
+   </footer>
+ </body>
+ 

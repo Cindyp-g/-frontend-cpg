@@ -1,0 +1,95 @@
+<body>
+    <header>
+      <div class="header-container">
+          <img src="./logoo.jpg" alt="Logo de la tienda" class="logo">
+          <h1>Eunbyeol</h1>
+      </div>
+      <nav>
+          < <a href="http://localhost:4200/admin">Inicio</a>
+          <a href="adminUsuario">Usuarios</a>
+          <a href="adminProducto">Productos</a>
+          <a href="adminCategoria">Catefgorias</a>
+          <a href="adminCarrito">Carrito</a>
+          <a href="orden">Orden</a>
+          <a href="login">Login</a>
+      </nav>
+    </header>
+  
+    <main>
+      <h1>Gestión de Productos</h1>
+        <!-- Botón para mostrar el diálogo -->
+
+<!-- Diálogo para agregar producto -->
+<p-dialog [(visible)]="displayProductoDialog" header="Agregar Producto" [modal]="true" [closable]="false" [responsive]="true">
+  <form (ngSubmit)="guardarProducto()">
+    <div class="field">
+      <label>Nombre:</label>
+      <input type="text" pInputText [(ngModel)]="nuevoProducto.nombre" name="nombre" required />
+    </div>
+
+    <div class="field">
+      <label>Descripción:</label>
+      <input type="text" pInputText [(ngModel)]="nuevoProducto.descripcion" name="descripcion" />
+    </div>
+
+    <div class="field">
+      <label>Imagen (URL):</label>
+      <input type="text" pInputText [(ngModel)]="nuevoProducto.imagen_url" name="imagen_url" />
+    </div>
+
+    <div class="field">
+      <label>Precio:</label>
+      <input type="number" pInputText [(ngModel)]="nuevoProducto.precio" name="precio" required />
+    </div>
+    
+    <div class="field">
+      <label>Stock:</label>
+      <input type="number" pInputText [(ngModel)]="nuevoProducto.stock" name="stock" required />
+    </div>
+
+    <div class="mt-2">
+      <button pButton type="submit" label="Guardar Producto" [disabled]="!nuevoProducto.nombre || !nuevoProducto.precio || !nuevoProducto.stock"></button>
+      <button pButton type="button" class="p-button-secondary" label="Cancelar" (click)="displayProductoDialog = false"></button>
+    </div>
+  </form>
+</p-dialog>
+
+<!-- Tabla de productos -->
+<table>
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Stock</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos">
+      <td><img [src]="getImageUrl(producto.imagen_url)" width="60" /></td>
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.descripcion }}</td>
+      <td>{{ producto.stock }}</td>
+      <td>{{ producto.precio | currency }}</td>
+      <td>
+        <button (click)="editarProducto(producto)">Editar</button>
+        <button (click)="eliminarProducto(producto.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- Contenedor del botón de agregar producto -->
+<div class="boton-agregar-producto">
+  <p-button label="Agregar Producto" icon="pi pi-plus" (click)="displayProductoDialog = true"></p-button>
+</div>
+    </main>
+  
+    <footer>
+      <p>&copy; 2025 Eunbyeol | Todos los derechos reservados.</p>
+    </footer>
+  </body>
+  

@@ -7,6 +7,12 @@ import { MegaMenuModule } from 'primeng/megamenu';
 import { ToolbarModule } from 'primeng/toolbar';
 import {CardModule} from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { DialogModule } from 'primeng/dialog';
+import { TableModule } from 'primeng/table';
+
+
+
 
 const mismodulos: any = [
  ButtonModule,
@@ -16,14 +22,19 @@ const mismodulos: any = [
  MegaMenuModule,
  ToolbarModule,
  CardModule,
- ToastModule
+ ToastModule,
+ DialogModule,
+ TableModule 
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
-    mismodulos
+    mismodulos,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     mismodulos

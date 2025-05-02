@@ -1,0 +1,427 @@
+/* ----------- RESET GENERAL ----------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f7f9;
+    color: #2a4d59;
+    line-height: 1.6;
+    padding: 0 20px;
+  
+    min-height: 100vh; /* Ocupa toda la altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* HEADER */
+  header {
+    background-color: #3ba99c;
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logo {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+  }
+  
+  /* NAV */
+  nav a {
+    color: #ffffff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #d7f5f0;
+  }
+  
+  /* MAIN ocupa espacio restante */
+  main {
+    flex-grow: 1;
+    margin-bottom: 40px;
+  }
+  
+  /* FOOTER pegado abajo */
+  footer {
+    background-color: #3ba99c;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    border-top: 3px solid #2a4d59;
+  }
+  
+  /* ----------- TABLA DEL CARRITO ----------- */
+  main h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2a4d59;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    margin: 0 auto 20px;
+    background-color: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  th, td {
+  
+    padding: 20px;
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #007e7e;
+    color: white;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+  
+  }
+  
+  tr:hover {
+    background-color: #f0fbfb;
+    
+  }
+  
+  tfoot{
+    align-content: center;
+  }
+  
+  
+  tfoot td.total {
+    font-weight: bold;
+    font-size: 1.5rem; 
+    background-color: #3ba99c; 
+    color: white; 
+    padding: 20px;
+    text-align: center; 
+    border-radius: 0 0 12px 12px;
+    margin-left: 20px; 
+  }
+  
+  tfoot td.total2 {
+    font-weight: bold;
+    font-size: 1.5rem; 
+    background-color: #ffffff00; 
+    color: #3ba99c; 
+    padding: 20px;
+    width: 500px;
+    text-align: center; 
+  }
+  
+  
+  /* ----------- BOTÓN DE PAGO ----------- */
+  .btn-checkout {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 15px;
+    background-color: #33b8b8;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  .btn-checkout:hover {
+    background-color: #2aa7a7;
+    transform: scale(1.05);
+  }
+  
+  /* Botón Eliminar */
+  td button {
+    background-color: #ff4d4d; /* Rojo vibrante */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  td button:hover {
+    background-color: #cc0000; 
+    transform: scale(1.05); 
+  }
+  
+  td button:active {
+    transform: scale(0.95);
+  }
+  
+  td {
+    text-align: center;
+  }
+  
+  
+  /* Estilos para el input de cantidad */
+  td input[type="number"] {
+    width: 60px; /* Tamaño compacto */
+    padding: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #3ba99c; /* Borde con color acorde al diseño */
+    border-radius: 6px;
+    background-color: #f8fdfd; /* Fondo suave */
+    outline: none; /* Elimina el borde azul por defecto */
+    transition: all 0.3s ease;
+  }
+  
+  /* Cuando el usuario selecciona el campo */
+  td input[type="number"]:focus {
+    border-color: #007e7e; /* Color más fuerte al enfocar */
+    background-color: #e0f7f7; /* Resalta el campo */
+    transform: scale(1.05); /* Pequeño zoom para mejor UX */
+  }
+  
+  /* Evita que los botones de incremento sean demasiado grandes en algunos navegadores */
+  td input[type="number"]::-webkit-inner-spin-button,
+  td input[type="number"]::-webkit-outer-spin-button {
+    height: 20px;
+  }
+  
+  .btn-add-cart {
+    width: 25%;
+    padding: 12px;
+    background-color: #33b8b8; /* Verde azulado fuerte */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+    margin-left: 550px;
+  }
+  
+  .btn-add-cart:hover {
+    background-color: #2aa7a7; /* Oscurecer al pasar */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-add-cart:active {
+    transform: translateY(0); /* Vuelve a posición al hacer click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* Estilo para cuando el carrito está vacío */
+  .empty-cart-message {
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+    border: 2px dashed #ff6347; /* Borde bonito */
+    border-radius: 8px;
+    margin-top: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .empty-cart-message p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .empty-cart-message .btn-shop-now {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff6347;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+  }
+  
+  .empty-cart-message .btn-shop-now:hover {
+    background-color: #e5533c; /* Hover effect */
+  }
+  
+
+
+  /* Estilos generales para la página de administración del carrito */
+.admin-cart {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .admin-cart-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Mensaje cuando el carrito está vacío */
+  .empty-cart-message {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #555;
+  }
+  
+  .empty-cart-message .btn-primary {
+    padding: 12px 20px;
+    background-color: #00796b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+  
+  .empty-cart-message .btn-primary:hover {
+    background-color: #004d40;
+  }
+  
+  /* Contenedor de la tabla de carrito */
+  .cart-table-container {
+    margin-top: 30px;
+    overflow-x: auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tabla para administrador */
+  .admin-cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+  }
+  
+  .admin-cart-table th,
+  .admin-cart-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .admin-cart-table th {
+    background-color: #009688;
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  .admin-cart-table td {
+    font-size: 1rem;
+  }
+  
+  /* Estilo para el campo de cantidad */
+  .quantity-input {
+    width: 60px;
+    padding: 5px;
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 0 auto;
+  }
+  
+  .quantity-input:focus {
+    border-color: #00796b;
+  }
+  
+  /* Botón de eliminar producto */
+  .btn-delete {
+    padding: 8px 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .btn-delete:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Botón de ver detalles */
+  .btn-details {
+    padding: 8px 12px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-details:hover {
+    background-color: #1976d2;
+  }
+  
+  /* Total General */
+  .total-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .total-amount {
+    font-size: 1.4rem;
+    color: #009688;
+    font-weight: bold;
+  }
+  
+  /* Acciones administrativas */
+  .admin-actions {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .admin-actions button {
+    padding: 12px 20px;
+    background-color: #00796b;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .admin-actions button:hover {
+    background-color: #004d40;
+  }
+  

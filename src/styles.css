@@ -1,8 +1,0 @@
-@import "primeicons/primeicons.css";
-@import "primeflex/primeflex.css";
-
-html, body{
-    height: 99%;
-    width: 99%;
-    background-color: rgb(255, 255, 255);
-}

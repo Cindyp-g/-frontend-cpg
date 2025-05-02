@@ -1,1 +1,75 @@
-<p>carrito works!</p>
+<body>
+    <!-- HEADER -->
+    <header>
+      <div class="header-container">
+        <img src="./logoo.jpg" alt="Logo de la tienda" class="logo">
+        <h1>Eunbyeol</h1>
+      </div>
+      <nav>
+        <a href="http://localhost:4200/">Inicio</a>
+        <a href="producto">Productos</a>
+        <a href="carrito">Carrito</a>
+        <a href="orden">Orden</a>
+        <a href="login">Login</a>
+    </nav>
+    </header>
+  
+    <!-- MAIN -->
+    
+  <!-- carrito.component.html -->
+  <main>
+    <h1>Tu Carrito</h1>
+  
+    <div *ngIf="carrito.length === 0" class="empty-cart-message">
+      <p>Tu carrito está vacío.</p>
+      <p>¡No te preocupes, aún puedes agregar productos!</p>
+      <a href="/producto" class="btn-shop-now">Ir a productos</a>
+    </div>
+    
+
+    <table *ngIf="carrito.length > 0">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Total</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of carrito">
+          <td>{{ item.nombre }}</td> 
+          <td>${{ item.precio }}</td> 
+          <td>
+            <input [(ngModel)]="item.cantidad" (change)="actualizarCantidad(item)" type="number" min="1">
+          </td>
+          <td>${{ item.precio * item.cantidad }}</td> 
+          <td>
+            <button (click)="eliminarProducto(item.id_producto)">Eliminar</button>
+          </td>
+        </tr>
+    
+      </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="total">Total General</td>
+            <td class="total2">
+              ${{ total }}
+            </td>
+          </tr>
+        </tfoot>
+        
+    </table>
+  
+        <button  class="btn-add-cart" (click)="hacerOrden()" >Hacer Orden</button>
+
+  </main>
+  
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 Eunbyeol | Todos los derechos reservados</p>
+    </footer>
+  </body>
+
+

@@ -1,0 +1,76 @@
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <img src="./logoo.jpg" alt="Logo de la tienda" class="logo">
+      <h1>Eunbyeol</h1>
+    </div>
+    <nav>
+      <a href="http://localhost:4200/admin">Inicio</a>
+      <a href="adminUsuario">Usuarios</a>
+      <a href="adminProducto">Productos</a>
+      <a href="adminCategoria">Catefgorias</a>
+      <a href="adminCarrito">Carrito</a>
+      <a href="orden">Orden</a>
+      <a href="login">Login</a>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main>
+    <h1>Administración de Categorías</h1>
+
+    <!-- Diálogo para Agregar / Editar Categoría -->
+    <p-dialog [(visible)]="displayCategoriaDialog" header="Agregar / Editar Categoría" [modal]="true" [closable]="false" [responsive]="true">
+      <form (ngSubmit)="guardarCategoria()">
+        <div class="field">
+          <label>Nombre:</label>
+          <input type="text" pInputText [(ngModel)]="nuevaCategoria.nombre" name="nombre" required />
+        </div>
+    
+        <div class="field">
+          <label>Imagen (URL):</label>
+          <input type="text" pInputText [(ngModel)]="nuevaCategoria.imagen_url" name="imagen_url" />
+        </div>
+    
+        <div class="mt-2">
+          <button pButton type="submit" label="Guardar Producto" [disabled]="!nuevaCategoria.nombre"></button>
+          <button pButton type="button" class="p-button-secondary" label="Cancelar" (click)="displayCategoriaDialog = false"></button>
+        </div>
+      </form>
+    </p-dialog>
+    
+    <!-- Tabla de Categorías -->
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Imagen</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categoria of categorias">
+          <td>{{ categoria.id }}</td>
+          <td>{{ categoria.nombre }}</td>
+          <td><img [src]="getImageUrl(categoria.imagen_url)" alt="{{ categoria.nombre }}" width="50"></td>
+          <td>
+            <button (click)="editarCategoria(categoria)">Editar</button>
+            <button (click)="eliminarCategoria(categoria)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Botón para Agregar Nueva Categoría -->
+    <div class="boton-agregar-categoria">
+      <p-button label="Agregar Categoría" icon="pi pi-plus" (click)="displayCategoriaDialog = true"></p-button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Eunbyeol | Todos los derechos reservados.</p>
+  </footer>
+</body>

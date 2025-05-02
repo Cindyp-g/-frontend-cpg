@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "eunbyeol-cpg-app": {
+    "eunbyeol-cpg-admin": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/eunbyeol-cpg-app",
+            "outputPath": "dist/eunbyeol-cpg-admin",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "eunbyeol-cpg-app:build:production"
+              "buildTarget": "eunbyeol-cpg-admin:build:production"
             },
             "development": {
-              "buildTarget": "eunbyeol-cpg-app:build:development"
+              "buildTarget": "eunbyeol-cpg-admin:build:development"
             }
           },
           "defaultConfiguration": "development"

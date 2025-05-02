@@ -1,1 +1,35 @@
-<p>categoria works!</p>
+
+<body>
+
+   <!-- Header -->
+   <header>
+    <div class="header-container">
+        <img src="./logoo.jpg" alt="Logo de la tienda" class="logo">
+        <h1>Eunbyeol</h1>
+    </div>
+    <nav>
+        <a href="http://localhost:4200/">Inicio</a>
+        <a href="producto">Productos</a>
+        <a href="categoria">Categorias</a>
+        <a href="carrito">Carrito</a>
+        <a href="orden">Orden</a>
+        <a href="login">Login</a>
+    </nav>
+</header>
+
+  <!-- Contenido Principal -->
+  <section class="categorias-grid">
+    <div *ngFor="let categoria of categorias" class="categoria-card">
+      <img [src]="getImageUrl(categoria.imagen_url)" [alt]="categoria.nombre">
+      <h2>{{ categoria.nombre }}</h2>
+      <button (click)="obtenerCategorias()">Ver productos</button>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Eunbyeol | Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+
+

@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografía general */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #eafaf9;
+    color: #2c3e50;
+}
+
+
+/* ===== FORMULARIO LOGIN ===== */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+/* Card personalizado */
+.p-card {
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
+}
+
+/* Header del card como encabezado principal */
+.p-card .p-card-header {
+    background-color: #3ba99c;
+    color: white;
+    padding: 40px;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 4px solid #2a7f78;
+}
+
+/* Campos */
+.field {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #2a7f78;
+}
+
+/* Inputs */
+input[type="text"], 
+input[type="password"] {
+    padding: 12px;
+    border: 2px solid #3ba99c;
+    border-radius: 12px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* Efecto focus */
+input[type="text"]:focus, 
+input[type="password"]:focus {
+    border-color: #2a7f78;
+    box-shadow: 0 0 5px rgba(42, 127, 120, 0.5);
+}
+
+/* Mensajes de error */
+.p-error {
+    color: #d32f2f;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Botón principal */
+.p-button {
+    margin-top: 10px;
+    padding: 12px 0;
+    border-radius: 30px;
+    background-color: #2a7f78;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    
+}
+
+/* Hover botón */
+.p-button:hover {
+    background-color: #256e69;
+
+}
+
+/* Botón deshabilitado */
+.p-button[disabled] {
+    background-color: #a0bebb;
+    cursor: not-allowed;
+}
+
+/* Link de registro */
+.mt-2 {
+    margin-top: 20px;
+    text-align: center;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+/* Botón de registro */
+.mt-2 .p-button {
+    background-color: transparent;
+    color: #2a7f78;
+    border: 2px solid #2a7f78;
+    padding: 8px 20px;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover botón registro */
+.mt-2 .p-button:hover {
+    background-color: #2a7f78;
+    color: white;
+}
+
+
+/* HEADER */
+header {
+    background-color: #3ba99c;
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* NAV */
+nav a {
+    color: #ffffff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d7f5f0;
+}
+
+footer {
+    background-color: #3ba99c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+/* ===== ESTILOS PARA LA TABLA DE USUARIOS ===== */
+.table-container {
+    margin: 40px auto;
+    max-width: 900px;
+    overflow-x: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+thead {
+    background-color: #2a7f78;
+    color: white;
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:hover {
+    background-color: #f1fdfb;
+}
+
+th:first-child, td:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child, td:last-child {
+    border-top-right-radius: 10px;
+}
+
+/* Botón Agregar Usuario alineado */
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+
+/* ===== ESTILOS PARA LOS BOTONES ===== */
+
+/* Estilos para los botones dentro de la tabla de usuarios */
+button {
+    background-color: #3ba99c;
+    color: white;
+    padding: 6px 12px; /* Tamaño más pequeño */
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem; /* Fuente más pequeña */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 5px; /* Espacio entre botones */
+}
+
+button:hover {
+    background-color: #256e69;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled {
+    background-color: #a0bebb;
+    cursor: not-allowed;
+}
+
+/* Botón de "Eliminar" */
+button.delete {
+    background-color: #e74c3c; /* Rojo para eliminar */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+button.delete:hover {
+    background-color: #c0392b; /* Rojo más oscuro en hover */
+}
+
+/* Botón de "Editar" */
+button.edit {
+    background-color: #3498db; /* Azul para editar */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+button.edit:hover {
+    background-color: #2980b9; /* Azul más oscuro en hover */
+}
+
+/* Estilos para los botones dentro del formulario de "Agregar Usuario" */
+button[type="submit"] {
+    background-color: #2a7f78;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #256e69;
+}
+
+button[type="button"] {
+    background-color: #a0bebb;
+    color: #2c3e50;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button[type="button"]:hover {
+    background-color: #8c99a8;
+}
+
